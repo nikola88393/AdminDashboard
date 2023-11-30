@@ -1,3 +1,9 @@
+:root {
+    --mainBackground: #ebeffa;
+    --boxBackground: #fafbff;
+    --blue: #0164fc;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5,14 +11,19 @@
     font-size: 14px;
 }
 
+li {
+    list-style-type: none;
+}
+
 .container {
+    background-color: var(--mainBackground);
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 3fr 15fr 2fr;
     grid-template-rows: 1fr 9fr;
-    grid-template-areas: "header header"
-        "aside main";
+    grid-template-areas: "header header header"
+        "aside main control";
     border: 2px solid red;
     padding: 15px;
     gap: 15px;
@@ -20,53 +31,96 @@
 
 header {
     grid-area: header;
+    padding: 15px;
     display: grid;
-    border: 1px solid red;
-    grid-template-columns: repeat(3, 1fr);
+    /* border: 1px solid red; */
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
+}
+
+header h1 {
+    justify-self: flex-start;
+    font-size: 3em;
+}
+
+header div {
+    justify-self: end;
+    padding: 15px;
 }
 
 aside {
     grid-area: aside;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
-    justify-content: center;
-    align-content: start;
+    grid-template-rows: 3fr 1fr;
+    padding: 15px;
 }
+
+.mainOptions li:nth-child(1) {
+    background-color: var(--blue);
+    color: var(--boxBackground);
+}
+
+.mainOptions li,
+.addOptions li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    /* border: 1px solid red; */
+}
+
+.mainOptions li:hover,
+.addOptions li:hover {
+    background-color: var(--blue);
+    color: var(--boxBackground);
+}
+
+.addOptions {
+    align-self: center;
+}
+
 
 main {
     grid-area: main;
     padding: 15px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+.controlPanel {
+    grid-area: control;
+    background-color: var(--boxBackground);
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 15px;
 }
 
 .daily {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    border: 1px solid red;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background-color: var(--boxBackground);
+    border-radius: 15px;
     gap: 15px;
     padding: 15px;
+    margin-bottom: 15px;
 }
 
-.info,
-.reminder {
-    border: 1px solid red;
+.daily div {
+    padding: 15px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
-    border: 1px solid red;
+    background-color: var(--boxBackground);
+    border-radius: 15px;
+    /* border: 1px solid red; */
     padding: 15px;
 }
 
 .card {
-    border: 1px solid red;
-}
-
-.floatingBar {
-    border: 1px solid red;
-    position: fixed;
-    right: 38%;
+    /* border: 1px solid red; */
+    padding: 15px;
 }
