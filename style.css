@@ -94,6 +94,9 @@ main {
     border-radius: 15px;
     padding: 15px;
     margin-top: 15px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 
 .daily {
@@ -114,13 +117,34 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
-    background-color: var(--boxBackground);
-    border-radius: 15px;
+
     /* border: 1px solid red; */
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 .card {
     /* border: 1px solid red; */
-    padding: 15px;
+    /* height: 200px; */
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px 30px 15px;
+    background-color: var(--boxBackground);
+    border-radius: 15px;
+}
+
+.card button {
+    background-color: var(--blue);
+    color: var(--boxBackground);
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100px;
+}
+
+.card button::after {
+    position: absolute;
+    color: red;
+    content: "Are de";
+    right: 65%;
 }
