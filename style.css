@@ -4,10 +4,16 @@
     --blue: #0164fc;
 }
 
+@font-face {
+    font-family: Exo2;
+    src: url(font/Exo2-VariableFont_wght.ttf);
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Exo2, sans-serif;
 }
 
 body {
