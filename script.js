@@ -29,7 +29,7 @@ function addCard() {
     let cardTitle = document.createElement("h3");
     cardTitle.innerHTML = title;
 
-    let cardContent = document.createElement("div");
+    let cardContent = document.createElement("p");
     cardContent.innerHTML = text;
 
     let buttonContainer = document.createElement("div");
