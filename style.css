@@ -165,7 +165,7 @@ main {
     cursor: pointer;
     width: 25px;
     height: 25px;
-    position: relative;
+    /* position: relative; */
 }
 
 .card .done {
@@ -192,4 +192,13 @@ main {
     width: 35px;
     height: 35px;
 
+}
+
+.cardButtons {
+    margin-top: auto;
+}
+
+.buttonContainer {
+    display: flex;
+    height: 100%;
 }

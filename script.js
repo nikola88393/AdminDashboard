@@ -32,7 +32,10 @@ function addCard() {
     cardContent.innerHTML = text;
 
     let buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("buttons");
+    buttonContainer.classList.add("buttonContainer");
+
+    let cardButtons = document.createElement("div");
+    cardButtons.classList.add("cardButtons");
 
     let cardButton1 = document.createElement("button");
     cardButton1.classList.add("remove");
@@ -43,8 +46,9 @@ function addCard() {
 
     cardDiv.appendChild(cardTitle);
     cardDiv.appendChild(cardContent);
-    buttonContainer.appendChild(cardButton1);
-    buttonContainer.appendChild(cardButton2);
+    cardButtons.appendChild(cardButton1);
+    cardButtons.appendChild(cardButton2);
+    buttonContainer.appendChild(cardButtons);
     cardDiv.appendChild(buttonContainer);
 
     cards.appendChild(cardDiv);
