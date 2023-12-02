@@ -9,9 +9,15 @@ function addCard() {
         alert("Must include title!");
         return;
     }
+    else if (title === null) {
+        return;
+    }
     let text = prompt("Enter the text for the task:")
     if (text === "") {
         alert("Must include text!");
+        return;
+    }
+    else if (text === null) {
         return;
     }
 

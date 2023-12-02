@@ -8,7 +8,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-size: 14px;
 }
 
 body {
@@ -38,6 +37,7 @@ header {
     /* border: 1px solid red; */
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+
 }
 
 .topRightOptions {
@@ -57,7 +57,6 @@ header div {
 
 aside {
     grid-area: aside;
-    /* border: 1px solid red; */
     display: grid;
     grid-template-rows: 3fr 1fr;
     padding: 15px;
@@ -65,11 +64,13 @@ aside {
 
 aside li {
     cursor: pointer;
+
 }
 
 .mainOptions li:nth-child(1) {
     background-color: var(--blue);
     color: var(--boxBackground);
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
 }
 
 .mainOptions li,
@@ -79,13 +80,13 @@ aside li {
     padding-left: 15px;
     margin-bottom: 15px;
     border-radius: 15px;
-    /* border: 1px solid red; */
 }
 
 .mainOptions li:hover,
 .addOptions li:hover {
     background-color: var(--blue);
     color: var(--boxBackground);
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
 }
 
 .addOptions {
@@ -96,30 +97,23 @@ aside li {
 main {
     grid-area: main;
     padding: 15px;
-    /* border: 1px solid red; */
 }
 
 .controlPanel {
     grid-area: control;
-    /* background-color: var(--boxBackground); */
     border-radius: 15px;
-    /* padding: 15px; */
     margin-top: 15px;
     display: grid;
-    /* grid-template-rows: 1fr 4fr; */
     align-items: center;
     justify-items: center;
     gap: 15px;
 }
 
 .controls {
-    /* width: 100%; */
-    height: 100%;
-    padding: 0px;
-    gap: 10px;
     display: flex;
     justify-content: center;
-    background-color: var(--boxBackground);
+    align-content: center;
+    background-color: var(--mainBackground);
     border-radius: 15px;
 }
 
@@ -129,7 +123,7 @@ main {
     padding: 15px;
     background-color: var(--boxBackground);
     border-radius: 15px;
-    /* margin-top: 30px; */
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
 }
 
 .daily {
@@ -140,6 +134,8 @@ main {
     gap: 15px;
     padding: 15px;
     margin-bottom: 15px;
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
+
 }
 
 .daily div {
@@ -150,19 +146,16 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
-
-    /* border: 1px solid red; */
-    /* padding: 15px; */
 }
 
 .card {
-    /* border: 1px solid red; */
-    /* height: 200px; */
     display: flex;
     flex-direction: column;
+    gap: 15px;
     padding: 30px 15px 30px 15px;
     background-color: var(--boxBackground);
     border-radius: 15px;
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3);
 }
 
 .card .remove {
@@ -194,7 +187,9 @@ main {
 } */
 
 .controls button {
-    background-color: var(--boxBackground);
+    background-color: var(--mainBackground);
     border: none;
+    width: 35px;
+    height: 35px;
 
 }
