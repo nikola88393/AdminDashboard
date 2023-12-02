@@ -151,7 +151,7 @@ main {
 .card {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     padding: 30px 15px 30px 15px;
     background-color: var(--boxBackground);
     border-radius: 15px;
@@ -177,14 +177,42 @@ main {
     height: 25px;
 }
 
-/* absolute pos status of the task idea */
-/* .card button::after {
+.card .undone {
+    background-image: url(svg/close_FILL0_wght400_GRAD0_opsz24.svg);
+    background-color: var(--boxBackground);
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.card h3 {
+    position: relative;
+}
+
+.incomplete {
+    position: relative;
+}
+
+.incomplete::after {
     position: absolute;
-    content: "❌";
-    left: 110px;
+    content: "Status: Awaiting completion ❌";
+    top: 50px;
+    left: 14px;
     color: red;
-    font-weight: 700;
-} */
+}
+
+.complete {
+    position: relative;
+}
+
+.complete::after {
+    position: absolute;
+    content: "Status: Completed ✅";
+    top: 50px;
+    left: 14px;
+    color: green;
+}
 
 .controls button {
     background-color: var(--mainBackground);

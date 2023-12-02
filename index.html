@@ -36,7 +36,7 @@
             <div class="daily">
                 <div class="info">
                     <h3>Information</h3>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aperiam explicabo reprehenderit, eveniet, nemo ducimus consectetur earum temporibus maxime sit ratione hic quas commodi natus incidunt ipsa quam! Saepe, consequuntur.
+                    This is my very straightforward and intuitive task manager project. Crafted with HTML, CSS, and JavaScript, this site helps you to organize your daily activities. Seamlessly(hopefuly) add, update, and mark tasks as complete, all within a clean and user-friendly interface.
                 </div>
                 <div class="reminder">
                     <h3>Reminders</h3>
@@ -44,41 +44,48 @@
                 </div>
             </div>
             <div class="cards" id="cards">
-                <div class="card" id="card1">
-                    <h3>Task</h3>
+                <div class="card incomplete" id="card1">
+                    <h3>Task 1</h3>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe atque, perspiciatis qui soluta sint ex sapiente alias eum quia deleniti suscipit, dolor assumenda impedit adipisci iste, sit sequi hic consequatur!
                     <!-- <button>Complete</button> -->
                     <div class="buttonContainer">
                     <div class="cardButtons">
                         <button onclick="deleteCard('card1')" class="remove"></button>
-                        <button class="done"></button>
+                        <button class="done" onclick="markDone('card1')"></button>
+                        <button class="undone" onclick="markUndone('card1')"></button>
                     </div>
+                </div>   
                 </div>
-                    
-                </div>
-                <div class="card" id="card2">
-                    <h3>Task</h3>
+                <div class="card incomplete" id="card2">
+                    <h3>Task 2</h3>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe atque, perspiciatis qui soluta sint ex sapiente alias eum quia deleniti suscipit, dolor assumenda impedit adipisci iste, sit sequi hic consequatur!
                     <!-- <button>Complete</button> -->
-                    <div class="cardButtons">
-                        <button onclick="deleteCard('card2')" class="remove"></button>
-                        <button class="done"></button>
-                    </div>
+                    <div class="buttonContainer">
+                        <div class="cardButtons">
+                            <button onclick="deleteCard('card2')" class="remove"></button>
+                            <button class="done" onclick="markDone('card2')"></button>
+                            <button class="undone" onclick="markUndone('card2')"></button>
+                        </div>
+                    </div>   
                 </div>
-                <div class="card" id="card3">
-                    <h3>Task</h3>
+                <div class="card incomplete" id="card3">
+                    <h3>Task 3</h3>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe atque, perspiciatis qui soluta sint ex sapiente alias eum quia deleniti suscipit, dolor assumenda impedit adipisci iste, sit sequi hic consequatur!
                     <!-- <button>Complete</button> -->
-                    <div class="cardButtons">
-                        <button onclick="deleteCard('card3')" class="remove"></button>
-                        <button class="done"></button>
-                    </div>
+                    <div class="buttonContainer">
+                        <div class="cardButtons">
+                            <button onclick="deleteCard('card3')" class="remove"></button>
+                            <button class="done" onclick="markDone('card3')"></button>
+                            <button class="undone" onclick="markUndone('card3')"></button>
+                        </div>
+                    </div>   
                 </div>
             </div>
         </main>
         <div class="controlPanel">
             <div class="announcements">
                 <div class="announcement">
+                    <h2>WRITE INSTRUCTIONS ABOUT ALL THE FUNCTIONS OF THE SITE. WHAT THE EACH ICON AND BUTTON DOES. MAKE A GOOD VISUAL REPRESENTATION WITH EACH ICON</h2>
                     <h3>Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis vitae eveniet sequi a fugiat quidem laboriosam quis dolore voluptate, cumque atque alias nesciunt similique voluptatum reiciendis, reprehenderit tenetur ex eaque!</p>
                 </div>

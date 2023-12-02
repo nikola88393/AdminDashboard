@@ -23,6 +23,7 @@ function addCard() {
 
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
+    cardDiv.classList.add("incomplete");
     cardDiv.id = ID;
 
     let cardTitle = document.createElement("h3");
@@ -43,11 +44,17 @@ function addCard() {
 
     let cardButton2 = document.createElement("button");
     cardButton2.classList.add("done");
+    cardButton2.setAttribute("onclick", `markDone('${ID}')`);
+
+    let cardButton3 = document.createElement("button");
+    cardButton3.classList.add("undone");
+    cardButton3.setAttribute("onclick", `markUndone('${ID}')`);
 
     cardDiv.appendChild(cardTitle);
     cardDiv.appendChild(cardContent);
     cardButtons.appendChild(cardButton1);
     cardButtons.appendChild(cardButton2);
+    cardButtons.appendChild(cardButton3);
     buttonContainer.appendChild(cardButtons);
     cardDiv.appendChild(buttonContainer);
 
@@ -58,4 +65,16 @@ function addCard() {
 function deleteCard(cardId) {
     let card = document.getElementById(cardId);
     card.remove();
+}
+
+function markDone(cardId) {
+    let card = document.getElementById(cardId);
+    card.classList.remove("incomplete");
+    card.classList.add("complete");
+}
+
+function markUndone(cardId) {
+    let card = document.getElementById(cardId);
+    card.classList.remove("complete");
+    card.classList.add("incomplete");
 }
