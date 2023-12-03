@@ -49,6 +49,8 @@ header {
 .topRightOptions {
     display: flex;
     align-items: center;
+    padding: 0;
+    padding-right: 35px;
 }
 
 header h1 {
