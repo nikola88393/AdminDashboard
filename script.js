@@ -23,11 +23,11 @@ function setCardInfo() {
     let cardTitle = document.createElement("h3");
     cardTitle.innerHTML = title;
 
-    let cardContent = document.createElement("p");
-    cardContent.innerHTML = text;
-
     let cardDueDate = document.createElement("p");
     cardDueDate.innerHTML = `Due date: ${date}`;
+
+    let cardContent = document.createElement("p");
+    cardContent.innerHTML = text;
 
     let buttonContainer = document.createElement("div");
     buttonContainer.classList.add("buttonContainer");
@@ -48,8 +48,8 @@ function setCardInfo() {
     cardButton3.setAttribute("onclick", `markUndone('${ID}')`);
 
     cardDiv.appendChild(cardTitle);
-    cardDiv.appendChild(cardContent);
     cardDiv.appendChild(cardDueDate);
+    cardDiv.appendChild(cardContent);
     cardButtons.appendChild(cardButton1);
     cardButtons.appendChild(cardButton2);
     cardButtons.appendChild(cardButton3);
