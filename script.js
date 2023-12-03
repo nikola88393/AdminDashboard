@@ -26,6 +26,11 @@ function setCardInfo() {
     let cardDueDate = document.createElement("p");
     cardDueDate.innerHTML = `Due date: ${date}`;
 
+    let cardStatus = document.createElement("p");
+    cardStatus.classList.add("status");
+    cardStatus.innerHTML = "Status: Awaiting completion ❌";
+    cardStatus.style.color = "red";
+
     let cardContent = document.createElement("p");
     cardContent.innerHTML = text;
 
@@ -49,6 +54,7 @@ function setCardInfo() {
 
     cardDiv.appendChild(cardTitle);
     cardDiv.appendChild(cardDueDate);
+    cardDiv.appendChild(cardStatus);
     cardDiv.appendChild(cardContent);
     cardButtons.appendChild(cardButton1);
     cardButtons.appendChild(cardButton2);
@@ -71,14 +77,21 @@ function deleteCard(cardId) {
 
 function markDone(cardId) {
     let card = document.getElementById(cardId);
-    card.classList.remove("incomplete");
-    card.classList.add("complete");
+    let status = card.getElementsByClassName("status")[0];
+
+    status.innerHTML = "Status: Completed ✅";
+    status.style.color = "green";
+
 }
 
 function markUndone(cardId) {
     let card = document.getElementById(cardId);
-    card.classList.remove("complete");
-    card.classList.add("incomplete");
+    let status = card.getElementsByClassName("status")[0];
+
+
+    status.innerHTML = "Status: Awaiting completion ❌";
+    status.style.color = "red";
+
 }
 
 function closeForm() {
