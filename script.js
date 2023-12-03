@@ -1,25 +1,19 @@
+// Number is set to 4 because there are 3 exapmple cards
 let cardId = 4;
+
 function addCard() {
+    let form = document.getElementById("cardForm");
+    form.style.display = "flex";
+}
+
+function setCardInfo() {
     let ID = "card" + cardId;
     cardId++;
 
     let cards = document.getElementById("cards");
-    let title = prompt("Enter the title of the task:");
-    if (title === "") {
-        alert("Must include title!");
-        return;
-    }
-    else if (title === null) {
-        return;
-    }
-    let text = prompt("Enter the text for the task:")
-    if (text === "") {
-        alert("Must include text!");
-        return;
-    }
-    else if (text === null) {
-        return;
-    }
+    let title = document.getElementById("title").value;
+    let text = document.getElementById("content").value;
+    let date = document.getElementById("date").value;
 
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
@@ -31,6 +25,9 @@ function addCard() {
 
     let cardContent = document.createElement("p");
     cardContent.innerHTML = text;
+
+    let cardDueDate = document.createElement("p");
+    cardDueDate.innerHTML = `Due date: ${date}`;
 
     let buttonContainer = document.createElement("div");
     buttonContainer.classList.add("buttonContainer");
@@ -52,6 +49,7 @@ function addCard() {
 
     cardDiv.appendChild(cardTitle);
     cardDiv.appendChild(cardContent);
+    cardDiv.appendChild(cardDueDate);
     cardButtons.appendChild(cardButton1);
     cardButtons.appendChild(cardButton2);
     cardButtons.appendChild(cardButton3);
@@ -60,6 +58,10 @@ function addCard() {
 
     cards.appendChild(cardDiv);
 
+    document.getElementById("form").reset();
+
+    let form = document.getElementById("cardForm");
+    form.style.display = "none";
 }
 
 function deleteCard(cardId) {
@@ -77,4 +79,11 @@ function markUndone(cardId) {
     let card = document.getElementById(cardId);
     card.classList.remove("complete");
     card.classList.add("incomplete");
+}
+
+function closeForm() {
+    document.getElementById("form").reset();
+
+    let form = document.getElementById("cardForm");
+    form.style.display = "none";
 }
