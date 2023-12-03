@@ -30,6 +30,27 @@
             </form>
         </div>
     </div>
+    <div class="wrapper" id="cardEditForm">
+        <div class="formContainer">
+            <form id="editForm">
+                <div class="topFormContainer">
+                    <h1>Edit task card</h1>
+                    <button onclick="closeEditForm()" class="formClose"></button>
+                </div>
+                <p id="editCardId" style="display: none;"></p>
+                <label for="editTitle">Card Title*:</label>
+                <input type="text" name="editTitle" id="editTitle" required>
+
+                <label for="editContent">Card content*:</label>
+                <textarea name="editContent" id="editContent" cols="30" rows="10" required></textarea>
+                
+                <label for="editDate">Due date*:</label>
+                <input type="date" id="editDate" name="editDate" required>
+
+                <button type="button" onclick="editCardInfo()" class="addCardForm">Save</button>
+            </form>
+        </div>
+    </div>
 
     <div class="container">
         <header class="header">
@@ -69,7 +90,7 @@
             <div class="cards" id="cards">
                 <div class="card" id="card1">
                     <h3>Task 1</h3>
-                    <p>Due date: DD-MM-YYYY</p>
+                    <p>Due date: YYYY-MM-DD</p>
                     <p class="status" style="color: red;">Status: Awaiting completion ❌</p>
                     <p>orem, ipsum dolor sit amet consectetur adipisicing elit. Saepe atque, perspiciatis qui soluta sint ex sapiente alias eum quia deleniti suscipit, dolor assumenda impedit adipisci iste, sit sequi hic consequatur!</p>
                     <div class="buttonContainer">
@@ -77,12 +98,13 @@
                         <button onclick="deleteCard('card1')" class="remove"></button>
                         <button class="done" onclick="markDone('card1')"></button>
                         <button class="undone" onclick="markUndone('card1')"></button>
+                        <button class="edit" onclick="editCard('card1')"></button>
                     </div>
                 </div>   
                 </div>
                 <div class="card incomplete" id="card2">
                     <h3>Task 2</h3>
-                    <p>Due date: DD-MM-YYYY</p>
+                    <p>Due date: YYYY-MM-DD</p>
                     <p class="status" style="color: red;">Status: Awaiting completion ❌</p>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat nemo provident, totam sapiente, ut autem ipsa dicta fugit fugiat distinctio numquam incidunt! Temporibus nulla cum officiis? Id totam vel doloremque.</p>
                     <div class="buttonContainer">
@@ -90,12 +112,13 @@
                             <button onclick="deleteCard('card2')" class="remove"></button>
                             <button class="done" onclick="markDone('card2')"></button>
                             <button class="undone" onclick="markUndone('card2')"></button>
+                            <button class="edit" onclick="editCard('card2')"></button>
                         </div>
                     </div>   
                 </div>
                 <div class="card incomplete" id="card3">
                     <h3>Task 3</h3>
-                    <p>Due date: DD-MM-YYYY</p>
+                    <p>Due date: YYYY-MM-DD</p>
                     <p class="status" style="color: red;">Status: Awaiting completion ❌</p>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos tenetur veniam reprehenderit eum obcaecati culpa ut repellendus nulla corporis alias mollitia totam eveniet, sit corrupti, odit dolorum eius illo? Enim.</p>
                     <div class="buttonContainer">
@@ -103,6 +126,7 @@
                             <button onclick="deleteCard('card3')" class="remove"></button>
                             <button class="done" onclick="markDone('card3')"></button>
                             <button class="undone" onclick="markUndone('card3')"></button>
+                            <button class="edit" onclick="editCard('card3')"></button>
                         </div>
                     </div>   
                 </div>
@@ -119,10 +143,8 @@
                     <br><p>- To delete a task you need to click on the first icon <img src="svg/delete_FILL0_wght400_GRAD0_opsz24.svg" alt="delete icon"> in the bottom left corner of the task card. </p>
                     <br><p>- To mark a task as complete you need to click on the second icon <img src="svg/done_FILL0_wght400_GRAD0_opsz24.svg" alt="done icon"> in the bottom left corner of the task card. </p>
                     <br><p>- To mark a task as incomplete you need to click on the third icon <img src="svg/close_FILL0_wght400_GRAD0_opsz24.svg" alt="undone icon"> in the bottom left corner of the task card.</p>
-                    <br><p>- To edit the content of a task card: SOON</p>
+                    <br><p>- To edit the content of a task card click on the forth icon <img src="svg/edit_FILL0_wght400_GRAD0_opsz24.svg" alt="edit icon"> in the bottom left corner of the task card</p>
                     <br>
-                    <h3>Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis vitae eveniet sequi a fugiat quidem laboriosam quis dolore voluptate, cumque atque alias nesciunt similique voluptatum reiciendis, reprehenderit tenetur ex eaque!</p>
                 </div>
             </div>
         </div>

@@ -15,6 +15,12 @@ function setCardInfo() {
     let text = document.getElementById("content").value;
     let date = document.getElementById("date").value;
 
+    //for future improvement
+    if (title == "" || text == "" || date == "") {
+        alert("User must fill every field!");
+        return;
+    }
+
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
     cardDiv.classList.add("incomplete");
@@ -52,6 +58,10 @@ function setCardInfo() {
     cardButton3.classList.add("undone");
     cardButton3.setAttribute("onclick", `markUndone('${ID}')`);
 
+    let cardButton4 = document.createElement("button");
+    cardButton4.classList.add("edit");
+    cardButton4.setAttribute("onclick", `editCard('${ID}')`);
+
     cardDiv.appendChild(cardTitle);
     cardDiv.appendChild(cardDueDate);
     cardDiv.appendChild(cardStatus);
@@ -59,6 +69,7 @@ function setCardInfo() {
     cardButtons.appendChild(cardButton1);
     cardButtons.appendChild(cardButton2);
     cardButtons.appendChild(cardButton3);
+    cardButtons.appendChild(cardButton4);
     buttonContainer.appendChild(cardButtons);
     cardDiv.appendChild(buttonContainer);
 
@@ -68,6 +79,23 @@ function setCardInfo() {
 
     let form = document.getElementById("cardForm");
     form.style.display = "none";
+}
+
+function editCardInfo() {
+    let id = document.getElementById("editCardId").innerHTML;
+
+    let title = document.getElementById("editTitle").value;
+    let text = document.getElementById("editContent").value;
+    let date = document.getElementById("editDate").value;
+    let card = document.getElementById(`${id}`);
+
+    card.getElementsByTagName("h3")[0].innerHTML = title;
+    card.getElementsByTagName("p")[2].innerHTML = text;
+    card.getElementsByTagName("p")[0].innerHTML = `Due date: ${date}`;
+
+    let form = document.getElementById("cardEditForm");
+    form.style.display = "none";
+
 }
 
 function deleteCard(cardId) {
@@ -99,4 +127,28 @@ function closeForm() {
 
     let form = document.getElementById("cardForm");
     form.style.display = "none";
+}
+function closeEditForm() {
+    document.getElementById("editForm").reset();
+
+    let form = document.getElementById("cardEditForm");
+    form.style.display = "none";
+}
+
+function editCard(cardId) {
+    let form = document.getElementById("cardEditForm");
+    form.style.display = "flex";
+
+    let card = document.getElementById(cardId);
+
+    let title = card.getElementsByTagName("h3")[0].innerHTML;
+    let content = card.getElementsByTagName("p")[2].innerHTML;
+    let date = card.getElementsByTagName("p")[0].innerHTML.slice(10, 20);
+
+    form.getElementsByTagName("p")[0].innerHTML = cardId;
+    form.getElementsByTagName("input")[0].value = title;
+    form.getElementsByTagName("textarea")[0].value = content;
+    form.getElementsByTagName("input")[1].value = date;
+
+    console.log(cardId);
 }

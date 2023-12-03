@@ -195,6 +195,15 @@ main {
     height: 25px;
 }
 
+.card .edit {
+    background-image: url(svg/edit_FILL0_wght400_GRAD0_opsz24.svg);
+    background-color: var(--boxBackground);
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
 .controls button {
     background-color: var(--mainBackground);
     border: none;
