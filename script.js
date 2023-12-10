@@ -149,6 +149,4 @@ function editCard(cardId) {
     form.getElementsByTagName("input")[0].value = title;
     form.getElementsByTagName("textarea")[0].value = content;
     form.getElementsByTagName("input")[1].value = date;
-
-    console.log(cardId);
 }
